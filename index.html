@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakefront Digital | Websites Done in Days, Not Months</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            opacity: 0.95;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #fff;
+            color: #667eea;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+        
+        /* Value Props */
+        .value-props {
+            background: #f8f9fa;
+        }
+        
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .prop-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .prop-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .prop-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .prop-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+        
+        .prop-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            background: white;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+        
+        .case-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .case-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .case-content {
+            padding: 30px;
+        }
+        
+        .case-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .case-content .type {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .case-content p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Pricing */
+        .pricing {
+            background: #f8f9fa;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid #667eea;
+            transform: scale(1.05);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 30px 0;
+        }
+        
+        .pricing-card ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        
+        .pricing-card ul li:before {
+            content: "✓";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* About */
+        .about {
+            background: white;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .about p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.7;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Lakefront Digital</h1>
+            <p class="tagline">Real websites for real businesses — done in days, not months</p>
+            <div class="hero-buttons">
+                <a href="#pricing" class="btn btn-primary">See Pricing</a>
+                <a href="#contact" class="btn btn-secondary">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="value-props">
+        <div class="container">
+            <h2 class="section-title">Why Small Businesses Choose Us</h2>
+            <p class="section-subtitle">No agencies. No waiting. Just results.</p>
+            <div class="props-grid">
+                <div class="prop-card">
+                    <div class="prop-icon">⚡</div>
+                    <h3>Done in Days</h3>
+                    <p>Most web agencies take 2-3 months. We deliver your site in 3-5 days. Because you need customers now, not someday.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">📱</div>
+                    <h3>Built for Mobile</h3>
+                    <p>80% of your customers browse on phones. Every site we build looks perfect on mobile, tablet, and desktop.</p>
+                </div>
+                <div class="prop-card">
+                    <div class="prop-icon">🔍</div>
+                    <h3>Found on Google</h3>
+                    <p>A beautiful site that no one sees is worthless. We optimize every site so customers actually find you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies" id="work">
+        <div class="container">
+            <h2 class="section-title">Recent Work</h2>
+            <p class="section-subtitle">Real projects for real clients</p>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-image">⚡ Heka Charge</div>
+                    <div class="case-content">
+                        <span class="type">Mobile App + Website</span>
+                        <h3>Heka Charge</h3>
+                        <p>Built a complete EV charging station finder app with real-time availability, payment integration, and user reviews. From concept to launch in weeks, not months.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image">🚗 Auto Advocate</div>
+                    <div class="case-content">
+                        <span class="type">Web Application</span>
+                        <h3>Auto Advocate</h3>
+                        <p>Created a platform helping consumers navigate car buying and disputes. Full-featured web app with user accounts, document management, and case tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">No hidden fees. No surprises.</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$1,500 <span>one-time</span></div>
+                    <ul>
+                        <li>Single-page website</li>
+                        <li>Mobile responsive</li>
+                        <li>Google Business setup</li>
+                        <li>Basic SEO optimization</li>
+                        <li>Contact form</li>
+                        <li>Delivered in 3-5 days</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="border-color: #667eea; color: #667eea;">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>Professional</h3>
+                    <div class="price">$3,500 <span>one-time</span></div>
+                    <ul>
+                        <li>Multi-page website (up to 5)</li>
+                        <li>Custom design</li>
+                        <li>Online booking integration</li>
+                        <li>Social media links</li>
+                        <li>Advanced SEO</li>
+                        <li>Google Analytics setup</li>
+                        <li>Delivered in 5-7 days</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="background: #667eea; color: white;">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <div class="price">$7,500+ <span>one-time</span></div>
+                    <ul>
+                        <li>Everything in Professional</li>
+                        <li>Custom web application</li>
+                        <li>User accounts & login</li>
+                        <li>Payment processing</li>
+                        <li>Admin dashboard</li>
+                        <li>Ongoing support included</li>
+                        <li>Custom timeline</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="border-color: #667eea; color: #667eea;">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>Meet Hannah</h2>
+                <p>I'm a certified medical coder turned developer with a passion for helping small businesses get online fast.</p>
+                <p>After years watching small businesses struggle with overpriced agencies and endless delays, I built Lakefront Digital to deliver what actually matters: websites that bring you customers, delivered in days — not months.</p>
+                <p>Based in Utah County, serving small businesses across the state.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Ready to Get Online?</h2>
+            <p>Let's talk about your project. No pressure, no sales pitch — just a conversation.</p>
+            <a href="mailto:lakehannah@hotmail.com" class="btn btn-primary">Email: lakehannah@hotmail.com</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lakefront Digital. All rights reserved.</p>
+            <div class="contact-info">
+                <p>📧 <a href="mailto:lakehannah@hotmail.com">lakehannah@hotmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
