@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Company Name] | Professional General Contractor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #1a1a2e;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f4a261;
+        }
+        
+        .phone-btn {
+            background: #f4a261;
+            color: #1a1a2e;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .phone-btn:hover {
+            background: #e76f51;
+            color: white;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(26,26,46,0.8), rgba(26,26,46,0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232d3436" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .badge {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: #f4a261;
+            color: #1a1a2e;
+        }
+        
+        .btn-primary:hover {
+            background: #e76f51;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #1a1a2e;
+        }
+        
+        /* Services */
+        .services {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #1a1a2e;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #1a1a2e;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Why Choose Us */
+        .why-us {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #f4a261;
+            margin-bottom: 10px;
+        }
+        
+        .feature h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .feature p {
+            color: #666;
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            padding: 80px 0;
+            background: #1a1a2e;
+            color: white;
+        }
+        
+        .portfolio .section-title {
+            color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .portfolio-item {
+            background: #2d3436;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .portfolio-img {
+            height: 200px;
+            background: #636e72;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .portfolio-content {
+            padding: 25px;
+        }
+        
+        .portfolio-content h3 {
+            margin-bottom: 10px;
+        }
+        
+        .portfolio-content p {
+            color: #b2bec3;
+            font-size: 0.95rem;
+        }
+        
+        /* Quote Form */
+        .quote-section {
+            padding: 80px 0;
+            background: #f4a261;
+        }
+        
+        .quote-section .section-title {
+            color: #1a1a2e;
+        }
+        
+        .quote-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #dfe6e9;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #f4a261;
+            outline: none;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #1a1a2e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #2d3436;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a2e;
+            color: white;
+            padding: 50px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #f4a261;
+            margin-bottom: 20px;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #b2bec3;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: #f4a261;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #2d3436;
+            color: #636e72;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">🏗️ [Company Name]</div>
+            <a href="tel:+15551234567" class="phone-btn">📞 Call (555) 123-4567</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>[Company Name]</h1>
+            <p class="hero-tagline">Your Trusted Partner for Quality Construction & Remodeling</p>
+            
+            <div class="hero-badges">
+                <div class="badge">✅ Licensed & Insured</div>
+                <div class="badge">⭐ 15+ Years Experience</div>
+                <div class="badge">🏆 100+ Projects Completed</div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="#quote" class="btn btn-primary">Get Free Quote</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Residential Construction</h3>
+                    <p>From new home builds to additions, we bring your vision to life with quality craftsmanship.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Projects</h3>
+                    <p>Office builds, retail spaces, and commercial renovations completed on time and on budget.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Remodeling</h3>
+                    <p>Kitchens, bathrooms, basements — transform your existing space into something amazing.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Repairs & Maintenance</h3>
+                    <p>Quick response for repairs, maintenance, and those urgent fixes that can't wait.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-number">24/7</div>
+                    <h3>Emergency Response</h3>
+                    <p>We're there when you need us, day or night.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">100%</div>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>We don't leave until you're happy.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">$</div>
+                    <h3>Free Estimates</h3>
+                    <p>No obligation quotes on every project.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-number">🏆</div>
+                    <h3>Award-Winning Service</h3>
+                    <p>Recognized for excellence in our community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">[Project Photo]</div>
+                    <div class="portfolio-content">
+                        <h3>Kitchen Remodel</h3>
+                        <p>Complete kitchen renovation with custom cabinetry and granite countertops.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">[Project Photo]</div>
+                    <div class="portfolio-content">
+                        <h3>Office Build-Out</h3>
+                        <p>Commercial space renovation for a local business.</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <div class="portfolio-img">[Project Photo]</div>
+                    <div class="portfolio-content">
+                        <h3>Home Addition</h3>
+                        <p>500 sq ft addition with master bedroom and bath.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="quote-section" id="quote">
+        <div class="container">
+            <h2 class="section-title">Get Your Free Quote</h2>
+            
+            <form class="quote-form" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Service Needed *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service...</option>
+                        <option value="residential">Residential Construction</option>
+                        <option value="commercial">Commercial Project</option>
+                        <option value="remodeling">Remodeling</option>
+                        <option value="repairs">Repairs & Maintenance</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Tell Us About Your Project</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Describe your project, timeline, budget, etc."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Request Free Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>[Company Name]</h3>
+                    <p>Your trusted partner for quality construction and remodeling services. Licensed, insured, and committed to excellence.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>📞 (555) 123-4567</p>
+                    <p>📧 info@company.com</p>
+                    <p>📍 123 Main Street, City, State 12345</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 7am - 6pm</p>
+                    <p>Saturday: 8am - 4pm</p>
+                    <p>Sunday: Emergency Only</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 [Company Name]. All rights reserved. Licensed & Insured.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
