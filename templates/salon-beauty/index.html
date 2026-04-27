@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Salon Name] | Beauty & Wellness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #444;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: white;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .logo span {
+            font-weight: 600;
+        }
+        
+        .book-btn {
+            background: white;
+            color: #ff6b6b;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+        
+        .hero h1 span {
+            font-weight: 600;
+            display: block;
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #ff6b6b;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 300;
+        }
+        
+        .section-title span {
+            font-weight: 600;
+            color: #ff6b6b;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #fafafa;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .service-price {
+            color: #ff6b6b;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Booking Section */
+        .booking {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .booking-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .booking-info h2 span {
+            color: #ff6b6b;
+        }
+        
+        .booking-info p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .contact-details {
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .contact-item strong {
+            color: #333;
+        }
+        
+        .booking-form {
+            background: #fafafa;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #ff6b6b 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        
+        .testimonials .section-title {
+            color: white;
+        }
+        
+        .testimonials .section-title span {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .stars {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-text {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            color: #ff9a9e;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #b2bec3;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: #ff9a9e;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #ff9a9e;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #636e72;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo"><span>[Salon</span>Name]</div>
+            <a href="#booking" class="book-btn">Book Now</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1><span>[Salon</span>Name]</h1>
+            <p class="hero-tagline">Where Beauty Meets Relaxation</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">✨ Luxury Services</div>
+                <div class="hero-feature">🏆 Award-Winning Stylists</div>
+                <div class="hero-feature">💎 Premium Products</div>
+            </div>
+            
+            <a href="#booking" class="cta-btn">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our <span>Services</span></h2>
+            <p class="section-subtitle">Indulge in our range of beauty and wellness treatments</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">💇</div>
+                    <div class="service-content">
+                        <h3>Hair Styling</h3>
+                        <p>Cuts, colors, highlights, and treatments by expert stylists.</p>
+                        <div class="service-price">From $45</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">💅</div>
+                    <div class="service-content">
+                        <h3>Nail Services</h3>
+                        <p>Manicures, pedicures, gel, and nail art for every occasion.</p>
+                        <div class="service-price">From $25</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">✨</div>
+                    <div class="service-content">
+                        <h3>Facials & Skincare</h3>
+                        <p>Rejuvenating facials and customized skincare treatments.</p>
+                        <div class="service-price">From $75</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">💆</div>
+                    <div class="service-content">
+                        <h3>Massage Therapy</h3>
+                        <p>Relaxing Swedish, deep tissue, and hot stone massages.</p>
+                        <div class="service-price">From $60</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our <span>Work</span></h2>
+            <p class="section-subtitle">Browse our latest styles and transformations</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">[Photo 1]</div>
+                <div class="gallery-item">[Photo 2]</div>
+                <div class="gallery-item">[Photo 3]</div>
+                <div class="gallery-item">[Photo 4]</div>
+                <div class="gallery-item">[Photo 5]</div>
+                <div class="gallery-item">[Photo 6]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h2>Book Your <span>Appointment</span></h2>
+                    <p>Ready to treat yourself? Book your appointment online or give us a call. We can't wait to make you look and feel amazing!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            📍 <strong>Location:</strong> 123 Beauty Lane, City, State 12345
+                        </div>
+                        
+                        <div class="contact-item">
+                            📞 <strong>Phone:</strong> (555) 123-4567
+                        </div>
+                        
+                        <div class="contact-item">
+                            ✉️ <strong>Email:</strong> hello@[salon].com
+                        </div>
+                        
+                        <div class="contact-item">
+                            🕐 <strong>Hours:</strong> Mon-Sat: 9am-7pm | Sun: 10am-5pm
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="booking-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="hair">Hair Styling</option>
+                            <option value="nails">Nail Services</option>
+                            <option value="facial">Facial & Skincare</option>
+                            <option value="massage">Massage Therapy</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Special Requests</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Any allergies, preferences, or special requests?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our <span>Clients Say</span></h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Absolutely love this salon! The staff is so friendly and my hair has never looked better. Highly recommend!"</p>
+                    <p class="testimonial-author">— Sarah M.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Best massage I've ever had. The atmosphere is so relaxing and the staff really knows what they're doing."</p>
+                    <p class="testimonial-author">— Jessica T.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"My go-to place for all things beauty. Professional, clean, and always makes me feel pampered!"</p>
+                    <p class="testimonial-author">— Amanda K.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>[SalonName]</h3>
+                    <p>Your premier destination for beauty and relaxation. Book your appointment today!</p>
+                    
+                    <div class="social-links">
+                        <a href="#">IG</a>
+                        <a href="#">FB</a>
+                        <a href="#">📷</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#services">Services</a></p>
+                    <p><a href="#gallery">Gallery</a></p>
+                    <p><a href="#booking">Book Now</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📞 (555) 123-4567</p>
+                    <p>✉️ hello@[salon].com</p>
+                    <p>📍 123 Beauty Lane</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 [SalonName]. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
