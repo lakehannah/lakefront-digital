@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractor App Prototype</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, sans-serif; background: #f5f5f5; color: #333; }
+        .nav { background: #1a1a2e; padding: 1rem; display: flex; gap: 1rem; }
+        .nav button { background: #f4a261; border: none; padding: 0.5rem 1rem; cursor: pointer; }
+        .section { display: none; padding: 2rem; max-width: 1200px; margin: 0 auto; }
+        .section.active { display: block; }
+        .card { background: white; padding: 1.5rem; margin-bottom: 1rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+        .stat-card { background: #1a1a2e; color: white; padding: 1.5rem; border-radius: 8px; text-align: center; }
+        .stat-number { font-size: 2rem; font-weight: bold; color: #f4a261; }
+        input, textarea, select { width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #ddd; }
+        button.primary { background: #f4a261; border: none; padding: 0.75rem 1.5rem; cursor: pointer; font-weight: bold; }
+        .line-item { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 0.5rem; margin-bottom: 0.5rem; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #1a1a2e; color: white; }
+        .total { text-align: right; font-size: 1.25rem; font-weight: bold; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('quotes')">Quotes</button>
+        <button onclick="showSection('customers')">Customers</button>
+        <button onclick="showSection('calendar')">Calendar</button>
+    </div>
+
+    <div id="dashboard" class="section active">
+        <h2>Dashboard</h2>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-number" id="totalQuotes">0</div><div>Total Quotes</div></div>
+            <div class="stat-card"><div class="stat-number" id="pendingQuotes">0</div><div>Pending</div></div>
+            <div class="stat-card"><div class="stat-number" id="approvedQuotes">0</div><div>Approved</div></div>
+            <div class="stat-card"><div class="stat-number" id="monthlyRevenue">$0</div><div>Monthly Revenue</div></div>
+        </div>
+    </div>
+
+    <div id="quotes" class="section">
+        <h2>Quotes</h2>
+        <div class="card">
+            <h3>Create New Quote</h3>
+            <input type="text" id="customerName" placeholder="Customer Name">
+            <input type="text" id="customerPhone" placeholder="Phone">
+            <input type="email" id="customerEmail" placeholder="Email">
+            <textarea id="projectDescription" placeholder="Project Description" rows="3"></textarea>
+            <div id="lineItems">
+                <div class="line-item">
+                    <input type="text" placeholder="Description" class="desc">
+                    <input type="number" placeholder="Qty" class="qty" onchange="calculateTotal()">
+                    <input type="number" placeholder="Rate" class="rate" onchange="calculateTotal()">
+                    <input type="text" class="total" readonly>
+                    <button onclick="removeLine(this)">X</button>
+                </div>
+            </div>
+            <button onclick="addLine()">+ Add Line Item</button>
+            <div class="total">Total: $<span id="quoteTotal">0.00</span></div>
+            <button class="primary" onclick="saveQuote()">Save Quote</button>
+        </div>
+        <div id="quotesList"></div>
+    </div>
+
+    <div id="customers" class="section">
+        <h2>Customers</h2>
+        <input type="text" id="searchCustomers" placeholder="Search customers..." onkeyup="searchCustomers()">
+        <div id="customersList"></div>
+    </div>
+
+    <div id="calendar" class="section">
+        <h2>Calendar</h2>
+        <div class="card">
+            <h3>Schedule Job</h3>
+            <select id="calendarCustomer"></select>
+            <input type="date" id="jobDate">
+            <input type="text" id="jobDescription" placeholder="Job description">
+            <button class="primary" onclick="scheduleJob()">Schedule</button>
+        </div>
+        <div id="calendarView"></div>
+    </div>
+
+    <script>
+        let quotes = JSON.parse(localStorage.getItem('quotes') || '[]');
+        let customers = JSON.parse(localStorage.getItem('customers') || '[]');
+        let jobs = JSON.parse(localStorage.getItem('jobs') || '[]');
+
+        function showSection(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            if (id === 'dashboard') updateDashboard();
+            if (id === 'customers') displayCustomers();
+            if (id === 'calendar') updateCalendar();
+        }
+
+        function addLine() {
+            const div = document.createElement('div');
+            div.className = 'line-item';
+            div.innerHTML = '<input type="text" placeholder="Description" class="desc"><input type="number" placeholder="Qty" class="qty" onchange="calculateTotal()"><input type="number" placeholder="Rate" class="rate" onchange="calculateTotal()"><input type="text" class="total" readonly><button onclick="removeLine(this)">X</button>';
+            document.getElementById('lineItems').appendChild(div);
+        }
+
+        function removeLine(btn) {
+            btn.parentElement.remove();
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            document.querySelectorAll('.line-item').forEach(row => {
+                const qty = parseFloat(row.querySelector('.qty').value) || 0;
+                const rate = parseFloat(row.querySelector('.rate').value) || 0;
+                const lineTotal = qty * rate;
+                row.querySelector('.total').value = lineTotal.toFixed(2);
+                total += lineTotal;
+            });
+            document.getElementById('quoteTotal').textContent = total.toFixed(2);
+        }
+
+        function saveQuote() {
+            const quote = {
+                id: Date.now(),
+                customer: document.getElementById('customerName').value,
+                phone: document.getElementById('customerPhone').value,
+                email: document.getElementById('customerEmail').value,
+                description: document.getElementById('projectDescription').value,
+                total: document.getElementById('quoteTotal').textContent,
+                status: 'pending',
+                date: new Date().toISOString()
+            };
+            quotes.push(quote);
+            
+            const customer = { name: quote.customer, phone: quote.phone, email: quote.email };
+            if (!customers.find(c => c.name === customer.name)) customers.push(customer);
+            
+            localStorage.setItem('quotes', JSON.stringify(quotes));
+            localStorage.setItem('customers', JSON.stringify(customers));
+            
+            alert('Quote saved!');
+            displayQuotes();
+            showSection('quotes');
+        }
+
+        function displayQuotes() {
+            let html = '<table><tr><th>Customer</th><th>Total</th><th>Status</th><th>Actions</th></tr>';
+            quotes.forEach(q => {
+                html += `<tr><td>${q.customer}</td><td>$${q.total}</td><td>${q.status}</td><td><button onclick="approveQuote(${q.id})">Approve</button></td></tr>`;
+            });
+            html += '</table>';
+            document.getElementById('quotesList').innerHTML = html;
+        }
+
+        function approveQuote(id) {
+            const q = quotes.find(x => x.id === id);
+            if (q) { q.status = 'approved'; localStorage.setItem('quotes', JSON.stringify(quotes)); displayQuotes(); updateDashboard(); }
+        }
+
+        function displayCustomers() {
+            let html = '<table><tr><th>Name</th><th>Phone</th><th>Email</th></tr>';
+            customers.forEach(c => {
+                html += `<tr><td>${c.name}</td><td>${c.phone}</td><td>${c.email}</td></tr>`;
+            });
+            html += '</table>';
+            document.getElementById('customersList').innerHTML = html;
+        }
+
+        function searchCustomers() {
+            const term = document.getElementById('searchCustomers').value.toLowerCase();
+            const filtered = customers.filter(c => c.name.toLowerCase().includes(term));
+            let html = '<table><tr><th>Name</th><th>Phone</th><th>Email</th></tr>';
+            filtered.forEach(c => {
+                html += `<tr><td>${c.name}</td><td>${c.phone}</td><td>${c.email}</td></tr>`;
+            });
+            html += '</table>';
+            document.getElementById('customersList').innerHTML = html;
+        }
+
+        function scheduleJob() {
+            const job = {
+                customer: document.getElementById('calendarCustomer').value,
+                date: document.getElementById('jobDate').value,
+                description: document.getElementById('jobDescription').value
+            };
+            jobs.push(job);
+            localStorage.setItem('jobs', JSON.stringify(jobs));
+            alert('Job scheduled!');
+            updateCalendar();
+        }
+
+        function updateCalendar() {
+            let select = '<option value="">Select Customer</option>';
+            customers.forEach(c => select += `<option value="${c.name}">${c.name}</option>`);
+            document.getElementById('calendarCustomer').innerHTML = select;
+            
+            let html = '<h3>Scheduled Jobs</h3>';
+            jobs.forEach(j => {
+                html += `<div class="card"><strong>${j.customer}</strong><br>${j.date}<br>${j.description}</div>`;
+            });
+            document.getElementById('calendarView').innerHTML = html;
+        }
+
+        function updateDashboard() {
+            document.getElementById('totalQuotes').textContent = quotes.length;
+            document.getElementById('pendingQuotes').textContent = quotes.filter(q => q.status === 'pending').length;
+            document.getElementById('approvedQuotes').textContent = quotes.filter(q => q.status === 'approved').length;
+            const revenue = quotes.filter(q => q.status === 'approved').reduce((sum, q) => sum + parseFloat(q.total), 0);
+            document.getElementById('monthlyRevenue').textContent = '$' + revenue.toFixed(0);
+        }
+
+        displayQuotes();
+    </script>
+</body>
+</html>
