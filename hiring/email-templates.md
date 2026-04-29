@@ -4,24 +4,24 @@
 
 ## Template 1: Cold Email (First Contact)
 
-**Subject:** [Business Name] — quick question about your website
+**Subject:** [Business Name] — your website problem
 
 **Body:**
 
 Hi [Owner Name],
 
-I was looking for a [business type] in [City] and noticed [Business Name] doesn't have a website.
+I was looking for a [business type] in [City] and checked out [Business Name]. 
 
-Quick question: Are you losing customers because people can't find you on Google?
+Your competitors have professional websites. You don't. That's costing you customers.
 
-I'm Hannah from Lakefront Digital. We build professional websites for small businesses in Utah County — and we do it fast (3-5 days, not months).
+I'm Hannah from Lakefront Digital. We build professional websites + apps for small businesses — and give you an AI interface to manage them yourself.
 
 **Example:**
-- [Business type] website: $2,500
-- Includes mobile design, Google listing, contact forms
-- Live by next Friday
+- Professional website + app: $5,000-8,000
+- AI management interface: Make changes yourself, instantly
+- Maintenance: $300-600/month (includes human support)
 
-Worth a 10-minute call to see if it makes sense?
+Worth a 10-minute call to see what that looks like for you?
 
 Best,
 Hannah
@@ -33,17 +33,17 @@ Lakefront Digital
 
 ## Template 2: Follow-Up (No Response)
 
-**Subject:** Re: [Business Name] — one more thing
+**Subject:** Re: [Business Name] — quick question
 
 **Body:**
 
 Hi [Owner Name],
 
-Following up on my email from [day]. I know you're busy.
+Following up from my email [day].
 
-Quick stat: 80% of customers Google a business before calling. If you're not there, your competitors are.
+Quick stat: 80% of customers Google a business before calling. If you're not showing up professionally, your competitors are getting those calls.
 
-I built a site for a [similar business] last week — they got 3 new leads in the first 5 days.
+We just built a site for a [similar business] — they can now update their own content instantly through our AI interface, no coding required.
 
 Still worth a quick chat?
 
@@ -59,9 +59,11 @@ Hannah
 
 Hi [Owner Name],
 
-I've reached out twice about building [Business Name] a website. No pressure if you're not interested — just want to make sure I'm not wasting your time.
+I've reached out twice about professional web services for [Business Name]. No pressure if it's not a priority right now.
 
-If you're good, I'll stop emailing. If you want to see what a $2,500 professional site looks like, I'm here.
+If you want to see what $5K-8K gets you (professional site + app + AI management), I'm here.
+
+If you're good, I'll stop emailing.
 
 Either way, hope business is going well.
 
@@ -72,25 +74,24 @@ Lakefront Digital
 
 ## Template 4: After Discovery Call
 
-**Subject:** [Business Name] — next steps
+**Subject:** [Business Name] — proposal attached
 
 **Body:**
 
 Hi [Owner Name],
 
-Thanks for the call today. Good talking about [project details].
+Thanks for the call today. Good talking about your project.
 
 **Summary:**
-- Website: [pages/features]
-- Investment: $[amount]
-- Timeline: [X] days
+- Package: [Standard/Premium AI]
+- Investment: $[amount] upfront
+- Monthly: $[amount]/month
+- Timeline: [X] weeks
 - Start date: [date]
 
-**Next step:** Send me any photos/content you want included. I'll build a first draft and send you a preview link.
+**Next step:** Reply "APPROVED" and I'll send the deposit invoice (50% to start).
 
 Questions? Just reply.
-
-Looking forward to working together.
 
 Hannah
 
@@ -104,15 +105,15 @@ Hannah
 
 Hi [Owner Name],
 
-Your proposal is attached. Here's the summary:
+Your proposal is attached.
 
 **Scope:** [brief description]
-**Investment:** $[amount]
-**Timeline:** [X] days from deposit
+**Investment:** $[amount] upfront + $[amount]/month maintenance
+**Timeline:** [X] weeks from deposit
 
-**To get started:** Reply with "APPROVED" and I'll send the invoice for 50% deposit ($[amount]).
+**To get started:** Reply with "APPROVED" and I'll send the invoice.
 
-Once I receive the deposit, I start building immediately.
+Once I receive the deposit, we start immediately.
 
 Questions? Call/text/email anytime.
 
@@ -130,14 +131,14 @@ Lakefront Digital
 
 Hi [Owner Name],
 
-Wanted to follow up on the proposal I sent [day]. 
+Following up on the proposal I sent [day].
 
 **Quick questions:**
 - Any concerns about scope or pricing?
 - Timeline work for you?
 - Ready to move forward?
 
-I'm holding [date] as a start date, but need confirmation to lock it in.
+I'm holding [date] as a potential start date, but need confirmation to lock it in.
 
 Let me know either way.
 
@@ -153,11 +154,11 @@ Hannah
 
 Hi [Owner Name],
 
-Quick note: I'm booking up for [month]. 
+I'm booking projects for [month]. 
 
 If you want your site live by [date], I need a decision this week.
 
-The proposal is still valid: $[amount] for [scope].
+Your proposal is still valid: $[amount] upfront + $[amount]/month.
 
 Reply "LET'S DO IT" and I'll send the deposit invoice.
 
@@ -175,9 +176,9 @@ Hi [Owner Name],
 
 Hope the website is working well for you!
 
-Quick question: Do you know any other [business owners/contractors/salon owners] who might need a website built?
+Quick question: Do you know other [business owners] who might need a professional site + AI management?
 
-I'd love to help them out. Happy to send you a $[amount] referral bonus if they sign up.
+Happy to send you a $[amount] referral bonus if they sign up.
 
 Thanks!
 
@@ -193,12 +194,12 @@ Hannah
 
 Hi [Owner Name],
 
-It's been [time] since your site launched. How's it working for you?
+It's been [time] since your site launched. How's everything working?
 
 **Quick questions:**
-- Getting any new leads from it?
+- Any issues with the AI interface?
 - Need any updates?
-- Anything not working right?
+- Everything running smoothly?
 
 I'm here if you need help.
 
@@ -211,7 +212,7 @@ Hannah
 
 **Message:**
 
-Hi [Name], this is Hannah from Lakefront Digital. I build fast, affordable websites for small businesses. Worth a quick chat? 📞 lakehannah@hotmail.com
+Hi [Name], this is Hannah from Lakefront Digital. I build professional websites with AI management for small businesses. Worth a quick chat? 📧 lakehannah@hotmail.com
 
 ---
 
@@ -227,13 +228,11 @@ Hi [Name], this is Hannah from Lakefront Digital. I build fast, affordable websi
 - Use their business name
 - Ask a question
 - Create curiosity
-- Avoid spam words (FREE, ACT NOW, etc.)
 
 **Tracking:**
-- Use Gmail read receipts or HubSpot to track opens
+- Use Gmail read receipts
 - Note response rates
 - A/B test subject lines
-- Stop emailing after 3 non-responses
 
 ---
 
@@ -245,7 +244,7 @@ Hi [Name], this is Hannah from Lakefront Digital. I build fast, affordable websi
 - [Business Type]
 - [City]
 - [Similar Business] example
-- [Amount] pricing
+- [Amount] pricing ($5K-8K or $10K-15K)
 - [Date] references
 
-**Never send generic templates** — customize every email or it looks spammy.
+**Never send generic templates** — customize every email.

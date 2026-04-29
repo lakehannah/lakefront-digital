@@ -1,71 +1,69 @@
 # Lakefront Digital - One Page Sales Sheet
 
-## AI-Powered Websites & Automation for Small Businesses
+## Managed AI Services for Small Businesses
 
 ---
 
 ### The Problem
 
-Small businesses in Utah County need websites, but:
-- ❌ Agencies charge $15,000+ and take 3 months
-- ❌ Freelancers ghost mid-project
+Small businesses need professional websites and apps, but:
+- ❌ Agencies charge $50,000+ and take 6 months
 - ❌ DIY builders look amateur
+- ❌ Changes take weeks and cost hundreds
 - ❌ No one answers their phone
 
-**You need customers NOW, not someday.**
+**You need a professional presence NOW, with the ability to update it easily.**
 
 ---
 
 ### Our Solution
 
-**Real websites. Real fast. Real results.**
+**Managed AI Services: Professional websites and apps with AI-powered management.**
 
 **What you get:**
-- ✅ Professional website in 3-5 days (not months)
-- ✅ Mobile-responsive design
-- ✅ Google Business setup & SEO
-- ✅ AI automation (chatbots, scheduling, follow-ups)
-- ✅ Ongoing support
+- ✅ Professional website + app
+- ✅ AI-powered management interface
+- ✅ Make changes instantly, no coding
+- ✅ 24-48 hour support when you need human help
+- ✅ Monthly maintenance included
 
-**Built for:** Contractors, salons, restaurants, and small businesses ready to get found online.
+**Built for:** Contractors, salons, restaurants, and small businesses ready for professional web presence.
 
 ---
 
 ### Pricing
 
-**Website + Basic Automation — $2,500**
-- Multi-page professional website
-- Mobile responsive
-- Contact forms & booking integration
-- Automated email responses
-- Google Business setup
-- **Delivered in 5-7 days**
+**Standard Package — $5,000-8,000 upfront**
+- Template-based website + app
+- Standard features
+- Human-managed changes
+- 24-48 hour turnaround
+- **Maintenance: $400-600/month**
 
-**AI Automation Suite — $5,000** ⭐ MOST POPULAR
-- Everything in Website + Basic
-- AI-powered chatbot for your site
-- Automated appointment scheduling
-- Customer follow-up email sequences
-- Lead capture & CRM integration
-- **Delivered in 7-10 days**
+**Premium AI Package — $10,000-15,000 upfront** ⭐ MOST POPULAR
+- Website + app + AI interface access
+- Direct AI access for real-time changes
+- Self-serve updates (lower maintenance cost)
+- Priority human support for complex changes
+- **Maintenance: $300-400/month**
 
-**Full AI Management — $1,500/month**
-- Everything in AI Automation Suite
-- Ongoing AI optimization
-- Custom workflow automation
-- Social media AI management
-- Review generation & monitoring
-- Monthly strategy calls
+**AI-Enabled Add-On — +$3,000-5,000**
+- Add to any base package
+- Direct AI interface for real-time changes
+- Self-serve: $200-300/month
+- Premium: $500-800/month (AI + priority human support)
 
 ---
 
 ### Why Us?
 
-**Speed:** 3-5 days vs 2-3 months
+**Speed:** Professional sites in days, not months
 
-**Price:** $2,500-5,000 vs $15,000+
+**Control:** Make changes yourself via AI interface
 
-**Local:** Based in Utah County, serving local businesses
+**Support:** 24-48 hour human support when needed
+
+**Price:** Fraction of agency costs
 
 **Proof:** Built Heka Charge (EV charging app) and Auto Advocate platforms
 
@@ -83,30 +81,30 @@ Web application helping consumers navigate car buying. User accounts, document m
 
 ### The Process
 
-**Step 1:** Discovery call (15 min) — We learn your needs
-**Step 2:** Proposal — You get a custom quote
-**Step 3:** Build — We build your site in days
+**Step 1:** Discovery call — We learn your needs
+**Step 2:** Proposal — Custom quote for your project
+**Step 3:** Build — We create your site/app
 **Step 4:** Launch — Your site goes live
-**Step 5:** Support — We handle updates & maintenance
+**Step 5:** AI Management — You control updates, we support you
 
 ---
 
 ### FAQ
 
 **Q: How fast can you build my site?**
-A: 3-5 days for basic sites, 7-10 days for automation features.
+A: Professional sites in days, not months.
 
 **Q: Do I need to know coding?**
-A: No. We handle everything. You just provide content and feedback.
+A: No. AI interface lets you make changes in plain English.
 
-**Q: What if I need changes later?**
-A: We include 30 days of revisions. Ongoing support available.
+**Q: What if I need human help?**
+A: 24-48 hour support included in all maintenance plans.
 
-**Q: Do you do e-commerce?**
-A: Yes, but it's custom pricing. Contact us for online stores.
+**Q: Can I upgrade later?**
+A: Yes. Add AI interface anytime for +$3,000-5,000.
 
-**Q: What's the catch?**
-A: No catch. Fast, affordable websites for small businesses.
+**Q: What's included in maintenance?**
+A: Updates, support, hosting, security, backups.
 
 ---
 
@@ -116,8 +114,8 @@ A: No catch. Fast, affordable websites for small businesses.
 📧 lakehannah@hotmail.com
 🌐 https://lakehannah.github.io/lakefront-digital/
 
-**Service Area:** Utah County (Spanish Fork, Provo, Orem, and surrounding areas)
+**Service Area:** Utah County and surrounding areas
 
 ---
 
-*AI-powered websites and automation — built for small businesses, delivered in days.*
+*Managed AI Services: Professional websites you control.*

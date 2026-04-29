@@ -9,12 +9,13 @@
 
 ## About Us
 
-Lakefront Digital builds AI-powered websites and automation for small businesses. We deliver in days, not months. Our clients are plumbers, electricians, salons, and restaurants — businesses that need web presence but get ignored by big agencies.
+Lakefront Digital builds professional websites and apps with AI-powered management for small businesses. We deliver in weeks, not months. Our clients are plumbers, electricians, salons, and restaurants — businesses that need professional web presence.
 
 **What makes us different:**
-- Speed: Websites in 3-5 days, not 2-3 months
-- Price: $2,500-$5,000 packages vs $15k+ agencies
-- AI automation: Chatbots, scheduling, lead capture
+- Professional websites + apps: $5,000-8,000 vs $50k+ agencies
+- AI management interface: Make changes yourself, instantly
+- Speed: Projects in weeks, not months
+- Support: 24-48 hour human support when needed
 - Local focus: Utah County small businesses
 
 ---
@@ -38,8 +39,8 @@ We're looking for sales representatives who can:
 ## Responsibilities
 
 - **Lead Generation:** Find businesses via cold outreach, referrals, social media
-- **Pitching:** Explain AI websites and automation to non-technical owners
-- **Closing:** Get signatures, collect deposits, kick off projects
+- **Pitching:** Explain managed AI services to non-technical owners
+- **Closing:** Get signatures, collect deposits, kick off projects ($5,000-$15,000+ per sale)
 - **Relationship Management:** Follow up, nurture leads, get referrals
 - **Reporting:** Track calls, meetings, closes in simple CRM
 
@@ -65,14 +66,15 @@ We're looking for sales representatives who can:
 ## Compensation
 
 **Option A: Commission-Only (1099)**
-- 20% of first project sold
-- 10% recurring on monthly AI management clients
-- Example: Sell $5,000 AI Automation Suite = $1,000 to you
-- Sell $1,500/month management = $150/month ongoing
+- 20% of project value sold
+- Example: Sell $10,000 Premium AI Package = $2,000 to you
+- Example: Sell $5,000 Standard Package = $1,000 to you
+- Plus 10% recurring on maintenance ($300-600/month = $30-60/month to you)
 
 **Option B: Base + Commission (W-2)**
-- $2,000/month base
+- $2,500/month base
 - 10% commission on projects sold
+- 5% recurring on maintenance
 - Benefits after 90 days
 
 **Both options:**
