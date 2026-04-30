@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shear Elegance Salon | Spanish Fork, UT</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        
+        .navbar {
+            background: linear-gradient(135deg, #8B4789 0%, #6B3A6B 100%);
+            padding: 1rem 2rem;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: white; font-size: 1.5rem; font-weight: bold; font-family: 'Georgia', serif; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: #FFB6C1; }
+        
+        .hero {
+            background: linear-gradient(135deg, #8B4789 0%, #DDA0DD 100%);
+            min-height: 90vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 2rem; margin-top: 60px;
+        }
+        .hero-content { max-width: 700px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; font-family: 'Georgia', serif; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
+        .cta-button {
+            background: #FFB6C1; color: #6B3A6B; padding: 1rem 2.5rem; font-size: 1.1rem;
+            border: none; border-radius: 50px; cursor: pointer; font-weight: 600;
+            text-decoration: none; display: inline-block; transition: transform 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        
+        .services { padding: 5rem 2rem; background: #f8f9fa; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #8B4789; }
+        .services-grid {
+            max-width: 1200px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+        }
+        .service-card {
+            background: white; padding: 2rem; border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .service-card h3 { color: #8B4789; margin-bottom: 1rem; }
+        .service-card p { color: #666; }
+        
+        .pricing { padding: 5rem 2rem; background: white; }
+        .pricing-grid {
+            max-width: 1000px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+        }
+        .pricing-card {
+            background: #f8f9fa; padding: 2rem; border-radius: 10px;
+            text-align: center; border: 2px solid #ddd;
+        }
+        .pricing-card.featured {
+            border-color: #8B4789; background: linear-gradient(135deg, #8B4789 0%, #DDA0DD 100%);
+            color: white;
+        }
+        .pricing-card h3 { margin-bottom: 1rem; }
+        .pricing-card.featured h3 { color: white; }
+        .price { font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem; }
+        .pricing-card ul { list-style: none; text-align: left; }
+        .pricing-card li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+        .pricing-card.featured li { border-color: rgba(255,255,255,0.3); }
+        
+        .testimonials {
+            padding: 5rem 2rem; background: #8B4789; color: white;
+        }
+        .testimonials .section-title { color: white; }
+        .testimonial-grid {
+            max-width: 1000px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px;
+        }
+        .testimonial-card p { font-style: italic; margin-bottom: 1rem; }
+        .testimonial-author { font-weight: bold; color: #FFB6C1; }
+        
+        .booking { padding: 5rem 2rem; background: #f8f9fa; }
+        .booking-container {
+            max-width: 800px; margin: 0 auto; display: grid;
+            grid-template-columns: 1fr 1fr; gap: 3rem;
+        }
+        .booking-info h3 { color: #8B4789; margin-bottom: 1rem; font-size: 1.5rem; }
+        .booking-info p { margin-bottom: 0.5rem; color: #666; }
+        .booking-info strong { color: #8B4789; }
+        
+        .booking-form { display: flex; flex-direction: column; gap: 1rem; }
+        .booking-form input, .booking-form select {
+            padding: 1rem; border: 2px solid #ddd; border-radius: 5px;
+            font-size: 1rem; font-family: inherit;
+        }
+        .booking-form button {
+            background: #8B4789; color: white; padding: 1rem; font-size: 1rem;
+            border: none; border-radius: 5px; cursor: pointer; font-weight: 600;
+        }
+        
+        footer {
+            background: #6B3A6B; color: white; text-align: center; padding: 2rem;
+        }
+        footer p { margin-bottom: 0.5rem; opacity: 0.8; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .booking-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">✨ Shear Elegance Salon</div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#booking">Book</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Where Beauty Meets Elegance</h1>
+            <p>Premium salon services in Spanish Fork. Expert stylists, relaxing atmosphere, results you'll love. Book online 24/7.</p>
+            <a href="#booking" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💇‍♀️</div>
+                <h3>Haircuts & Styling</h3>
+                <p>Precision cuts for all hair types. From classic to trendy, our stylists create the perfect look for you.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Color & Highlights</h3>
+                <p>Full color, balayage, ombre, and highlights. Premium products for vibrant, long-lasting color.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💆‍♀️</div>
+                <h3>Treatments</h3>
+                <p>Deep conditioning, keratin treatments, scalp treatments. Restore and rejuvenate your hair.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💅</div>
+                <h3>Nail Services</h3>
+                <p>Manicures, pedicures, gel, and acrylics. Relax and leave with beautiful nails.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👰</div>
+                <h3>Bridal & Events</h3>
+                <p>Wedding hair and makeup, updos, special occasion styling. Make your day perfect.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👶</div>
+                <h3>Kids & Family</h3>
+                <p>Haircuts for the whole family. Kids welcome! Patient, friendly stylists.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <h2 class="section-title">Pricing</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Women's Cut</h3>
+                <div class="price">$45</div>
+                <ul>
+                    <li>Shampoo & condition</li>
+                    <li>Precision cut</li>
+                    <li>Style & blow dry</li>
+                    <li>Styling tips</li>
+                </ul>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Color Package</h3>
+                <div class="price">$120</div>
+                <ul>
+                    <li>Full color treatment</li>
+                    <li>Root touch-up</li>
+                    <li>Toner if needed</li>
+                    <li>Deep conditioning</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>Men's Cut</h3>
+                <div class="price">$30</div>
+                <ul>
+                    <li>Shampoo</li>
+                    <li>Precision cut</li>
+                    <li>Style</li>
+                    <li>Beard trim +$10</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Best salon experience I've ever had! Jenna understood exactly what I wanted and my highlights look amazing."</p>
+                <div class="testimonial-author">— Amanda K., Spanish Fork</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"My wedding hair was perfect! They did my entire bridal party and everyone looked beautiful. Highly recommend!"</p>
+                <div class="testimonial-author">— Jessica M., Payson</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Finally found a salon that knows how to work with curly hair! My curls have never looked better."</p>
+                <div class="testimonial-author">— Maria L., Springville</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <h2 class="section-title">Book Your Appointment</h2>
+        <div class="booking-container">
+            <div class="booking-info">
+                <h3>Shear Elegance Salon</h3>
+                <p><strong>📍 Address:</strong> 567 Main Street, Spanish Fork, UT 84655</p>
+                <p><strong>📞 Phone:</strong> (801) 555-0456</p>
+                <p><strong>📧 Email:</strong> hello@shearelegancesalon.com</p>
+                <p><strong>🕐 Hours:</strong></p>
+                <p>Tuesday–Friday: 9 AM – 7 PM</p>
+                <p>Saturday: 9 AM – 5 PM</p>
+                <p>Sunday–Monday: Closed</p>
+            </div>
+            <form class="booking-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address">
+                <select required>
+                    <option value="">Select Service</option>
+                    <option value="womens-cut">Women's Cut ($45)</option>
+                    <option value="mens-cut">Men's Cut ($30)</option>
+                    <option value="color">Color Package ($120)</option>
+                    <option value="highlights">Highlights ($95+)</option>
+                    <option value="treatment">Treatment ($50+)</option>
+                    <option value="manicure">Manicure ($25)</option>
+                    <option value="pedicure">Pedicure ($40)</option>
+                    <option value="bridal">Bridal/Events (Call)</option>
+                </select>
+                <input type="date" placeholder="Preferred Date">
+                <select>
+                    <option value="">Preferred Time</option>
+                    <option value="morning">Morning (9 AM - 12 PM)</option>
+                    <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                    <option value="evening">Evening (4 PM - 7 PM)</option>
+                </select>
+                <button type="submit">Request Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Shear Elegance Salon | Licensed Professionals | Gift Certificates Available</p>
+        <p>Follow us: Instagram @shearelegance | Facebook/ShearEleganceSalon</p>
+    </footer>
+</body>
+</html>

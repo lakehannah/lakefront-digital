@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Valley Landscaping | Spanish Fork, UT</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        
+        .navbar {
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+            padding: 1rem 2rem;
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { color: white; font-size: 1.5rem; font-weight: bold; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; }
+        .nav-links a:hover { color: #81C784; }
+        
+        .hero {
+            background: linear-gradient(135deg, #2E7D32 0%, #66BB6A 100%);
+            min-height: 90vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white; padding: 2rem; margin-top: 60px;
+        }
+        .hero-content { max-width: 700px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; }
+        .cta-button {
+            background: #FFC107; color: #1B5E20; padding: 1rem 2.5rem; font-size: 1.1rem;
+            border: none; border-radius: 50px; cursor: pointer; font-weight: 600;
+            text-decoration: none; display: inline-block; transition: transform 0.3s;
+        }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        
+        .services { padding: 5rem 2rem; background: #f8f9fa; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #2E7D32; }
+        .services-grid {
+            max-width: 1200px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+        }
+        .service-card {
+            background: white; padding: 2rem; border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center;
+            transition: transform 0.3s;
+        }
+        .service-card:hover { transform: translateY(-5px); }
+        .service-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .service-card h3 { color: #2E7D32; margin-bottom: 1rem; }
+        .service-card p { color: #666; }
+        
+        .seasonal { padding: 5rem 2rem; background: white; }
+        .seasonal-grid {
+            max-width: 1000px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;
+        }
+        .seasonal-card {
+            background: #f8f9fa; padding: 2rem; border-radius: 10px; text-align: center;
+        }
+        .seasonal-card h3 { color: #2E7D32; margin-bottom: 1rem; }
+        .seasonal-card ul { list-style: none; text-align: left; color: #666; }
+        .seasonal-card li { padding: 0.3rem 0; }
+        
+        .process { padding: 5rem 2rem; background: #E8F5E9; }
+        .process-steps {
+            max-width: 1000px; margin: 0 auto; display: flex;
+            justify-content: space-between; flex-wrap: wrap; gap: 2rem;
+        }
+        .process-step {
+            flex: 1; min-width: 200px; text-align: center;
+        }
+        .step-number {
+            width: 60px; height: 60px; background: #2E7D32; color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem;
+        }
+        .process-step h3 { color: #2E7D32; margin-bottom: 0.5rem; }
+        
+        .testimonials {
+            padding: 5rem 2rem; background: #2E7D32; color: white;
+        }
+        .testimonials .section-title { color: white; }
+        .testimonial-grid {
+            max-width: 1000px; margin: 0 auto; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 10px;
+        }
+        .testimonial-card p { font-style: italic; margin-bottom: 1rem; }
+        .testimonial-author { font-weight: bold; color: #81C784; }
+        
+        .quote { padding: 5rem 2rem; background: #f8f9fa; }
+        .quote-container {
+            max-width: 800px; margin: 0 auto; display: grid;
+            grid-template-columns: 1fr 1fr; gap: 3rem;
+        }
+        .quote-info h3 { color: #2E7D32; margin-bottom: 1rem; font-size: 1.5rem; }
+        .quote-info p { margin-bottom: 0.5rem; color: #666; }
+        .quote-info strong { color: #2E7D32; }
+        
+        .quote-form { display: flex; flex-direction: column; gap: 1rem; }
+        .quote-form input, .quote-form select, .quote-form textarea {
+            padding: 1rem; border: 2px solid #ddd; border-radius: 5px;
+            font-size: 1rem; font-family: inherit;
+        }
+        .quote-form textarea { min-height: 100px; }
+        .quote-form button {
+            background: #2E7D32; color: white; padding: 1rem; font-size: 1rem;
+            border: none; border-radius: 5px; cursor: pointer; font-weight: 600;
+        }
+        
+        footer {
+            background: #1B5E20; color: white; text-align: center; padding: 2rem;
+        }
+        footer p { margin-bottom: 0.5rem; opacity: 0.8; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .quote-container { grid-template-columns: 1fr; }
+            .process-steps { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌿 Green Valley Landscaping</div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#seasonal">Seasonal</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#quote">Free Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Outdoor Space</h1>
+            <p>Professional landscaping for Spanish Fork & Utah County. Design, install, maintain — we do it all. Free quotes, no obligation.</p>
+            <a href="#quote" class="cta-button">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Landscape Design</h3>
+                <p>Custom designs tailored to your property. We create beautiful, functional outdoor spaces you'll love.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌱</div>
+                <h3>Planting & Sod</h3>
+                <p>Trees, shrubs, flowers, and sod installation. We select plants perfect for Utah's climate.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪨</div>
+                <h3>Hardscaping</h3>
+                <p>Patios, walkways, retaining walls, fire pits. Quality materials built to last.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💧</div>
+                <h3>Sprinkler Systems</h3>
+                <p>Installation, repair, and winterization. Smart systems that save water and money.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>Lawn Maintenance</h3>
+                <p>Mowing, edging, fertilization, weed control. Weekly or bi-weekly service available.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🍂</div>
+                <h3>Seasonal Cleanup</h3>
+                <p>Spring cleanup, fall leaf removal, winter prep. Keep your yard beautiful year-round.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal" id="seasonal">
+        <h2 class="section-title">Seasonal Services</h2>
+        <div class="seasonal-grid">
+            <div class="seasonal-card">
+                <h3>🌸 Spring</h3>
+                <ul>
+                    <li>Cleanup & debris removal</li>
+                    <li>Planting & mulching</li>
+                    <li>Sprinkler startup</li>
+                    <li>Fertilization</li>
+                </ul>
+            </div>
+            <div class="seasonal-card">
+                <h3>☀️ Summer</h3>
+                <ul>
+                    <li>Weekly mowing</li>
+                    <li>Pruning & trimming</li>
+                    <li>Weed control</li>
+                    <li>Irrigation maintenance</li>
+                </ul>
+            </div>
+            <div class="seasonal-card">
+                <h3>🍂 Fall</h3>
+                <ul>
+                    <li>Leaf removal</li>
+                    <li>Winterizing sprinklers</li>
+                    <li>Final mowing</li>
+                    <li>Planting bulbs</li>
+                </ul>
+            </div>
+            <div class="seasonal-card">
+                <h3>❄️ Winter</h3>
+                <ul>
+                    <li>Snow removal</li>
+                    <li>Holiday lighting</li>
+                    <li>Plan next season</li>
+                    <li>Equipment maintenance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <h2 class="section-title">How It Works</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Free Consultation</h3>
+                <p>We visit your property and discuss your vision, needs, and budget.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Custom Design</h3>
+                <p>We create a detailed plan with plant selections and materials.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Expert Installation</h3>
+                <p>Our team brings the design to life with quality craftsmanship.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Ongoing Care</h3>
+                <p>We offer maintenance plans to keep your landscape beautiful.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Transformed our backyard from a dirt patch to an oasis! The fire pit and patio are perfect for entertaining. Professional crew, fair price."</p>
+                <div class="testimonial-author">— Tom & Lisa H., Spanish Fork</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"We've used Green Valley for 5 years. They keep our lawn looking magazine-worthy. Reliable, responsive, and they actually show up when they say they will!"</p>
+                <div class="testimonial-author">— Robert K., Payson</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Best sprinkler installation in the valley. No more dry spots! They even taught me how to use the smart controller."</p>
+                <div class="testimonial-author">— Jennifer M., Springville</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote" id="quote">
+        <h2 class="section-title">Get Your Free Quote</h2>
+        <div class="quote-container">
+            <div class="quote-info">
+                <h3>Green Valley Landscaping</h3>
+                <p><strong>📍 Address:</strong> 890 Canyon View Drive, Spanish Fork, UT 84655</p>
+                <p><strong>📞 Phone:</strong> (801) 555-0789</p>
+                <p><strong>📧 Email:</strong> hello@greenvalleylandscaping.com</p>
+                <p><strong>🕐 Hours:</strong></p>
+                <p>Monday–Friday: 7 AM – 6 PM</p>
+                <p>Saturday: 8 AM – 4 PM</p>
+                <p>Sunday: Closed</p>
+                <p><em>Serving Utah County for 10+ years</em></p>
+            </div>
+            <form class="quote-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email Address">
+                <input type="text" placeholder="Address/Location">
+                <select required>
+                    <option value="">What do you need?</option>
+                    <option value="landscape-design">Landscape Design</option>
+                    <option value="planting">Planting/Sod</option>
+                    <option value="hardscaping">Hardscaping (Patio/Walkway)</option>
+                    <option value="sprinkler">Sprinkler System</option>
+                    <option value="maintenance">Lawn Maintenance</option>
+                    <option value="cleanup">Seasonal Cleanup</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea placeholder="Tell us about your project... (size of area, specific needs, timeline, budget range)"></textarea>
+                <button type="submit">Request Free Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Green Valley Landscaping | Licensed & Insured | Free Estimates</p>
+        <p>Serving Spanish Fork, Payson, Springville, Salem, Mapleton & Surrounding Areas</p>
+    </footer>
+</body>
+</html>
