@@ -1,7 +1,7 @@
 # Custom Domain Setup
 
 ## Step 1: Add CNAME file to repo ✅
-File: `CNAME` contains: `www.lakefrontdigital.com`
+File: `CNAME` contains: `www.lakefrontdigital.org`
 
 ## Step 2: Configure DNS (Google Domains)
 
@@ -27,7 +27,7 @@ Data: lakehannah.github.io.
 ## Step 3: Enable HTTPS in GitHub
 
 1. Go to repo Settings → Pages
-2. Under "Custom domain" enter: `www.lakefrontdigital.com`
+2. Under "Custom domain" enter: `www.lakefrontdigital.org`
 3. Check "Enforce HTTPS"
 4. Save
 
@@ -38,7 +38,7 @@ Data: lakehannah.github.io.
 
 ## Final URLs
 
-- http://lakefrontdigital.com → redirects to www
-- https://www.lakefrontdigital.com ← main site
+- http://lakefrontdigital.org → redirects to www
+- https://www.lakefrontdigital.org ← main site
 
 Done!
